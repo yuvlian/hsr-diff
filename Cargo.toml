@@ -1,0 +1,22 @@
+[package]
+name = "hsr-diff"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rfd = "0.15.1"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.134"
+# tokio = { version = "1.42.0", features = ["macros", "rt-multi-thread"] }
+
+[profile.release]
+strip = true
+lto = true
+opt-level = 3
+codegen-units = 1
+panic = "abort"
+
+[profile.release.build-override]
+strip = true
+opt-level = 3
+codegen-units = 1
