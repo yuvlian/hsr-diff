@@ -8,7 +8,7 @@ use std::io::{self, Write};
 use diff_type::DiffMap;
 
 fn wait_for_exit_benched(time: std::time::Instant) {
-    println!("Elapsed time: {}", time.elapsed().as_secs_f32());
+    println!("Elapsed time: {} (second)", time.elapsed().as_secs_f32());
     print!("Press Enter to exit...");
     io::stdout().flush().unwrap();
     let _ = io::stdin().read_line(&mut String::new());
